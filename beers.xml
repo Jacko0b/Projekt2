@@ -3,7 +3,7 @@
 <document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="beer.xsd">
     <reviewList>
-        <review Cicerone="no" date="2024-05-22">
+        <review Cicerone="yes" date="2024-05-22">
             <name>John Doe</name>
             <user>no</user>
             <email>johndoe@doe.com</email>
@@ -252,6 +252,41 @@
                     <description>Rodzinny browar z Pomorza</description>
                 </brewery>
                 <craft>yes</craft>
+            </from>
+            <servingTemp>12</servingTemp>
+            <abv>6.5</abv>
+            <flavourProfile>
+                <bitterness>5</bitterness>
+                <sweetness>8</sweetness>
+                <strength>9</strength>
+                <description>
+                    <color>Brown</color>
+                    <carbonation>moderate</carbonation>
+                    <aftertaste>Cloves, Ginger</aftertaste>
+                </description>
+            </flavourProfile>
+            <link>https://browargosciszewo.pl/produkty/?piwo=18#produkty</link>
+            <photo>
+                <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Gwiazdor-%E2%80%93-2.png</url>
+                <author>Browar Gościszewo</author>
+            </photo>
+            <seasonal>
+                <holidayname>X-mas</holidayname>
+                <from>2024-11-01</from>
+                <to>2025-02-01</to>
+            </seasonal>
+        </beer>
+        <beer id="b420" seasonal="true" Availability="available">
+            <name>Testowe</name>
+            <style>Ciemne Ale</style>
+            <from>
+                <brewery id="br069">
+                    <name>Browar Gościszewo</name>
+                    <location>Gościszewo</location>
+                    <yearEstablished>1991</yearEstablished>
+                    <description>Rodzinny browar z Pomorza</description>
+                </brewery>
+                <craft>no</craft>
             </from>
             <servingTemp>12</servingTemp>
             <abv>6.5</abv>

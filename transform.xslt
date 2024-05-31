@@ -5,15 +5,7 @@
     <!-- zmienne proste i zlozone-->
     <xsl:variable name="bgColor" select="'#9acd32'"/>
     <xsl:variable name="listStyle" select="'background-color:#9acd32; color:#ffffff; border:1px solid #000000; border-radius:10px;'"/>
-    <xsl:variable name="counter" select="1"/>
-
-    <xsl:variable name="ulStyle">
-        <color>#9acd21</color>
-        <fontColor>#ffffff</fontColor>
-        <border>1px solid #000000</border>
-        <borderRadius>10px</borderRadius>
-    </xsl:variable>
-
+    
     <!-- Definicja parametrów -->
     <xsl:param name="sortOrder" select="'ascending'"/>
     
@@ -34,7 +26,7 @@
                         <xsl:attribute name="style">
                             <xsl:value-of select="$listStyle"/>
                         </xsl:attribute>
-                        <xsl:apply-templates select="document/beerList/beer" mode="nav">
+                        <xsl:apply-templates select="document/beerList/beer[from/craft='yes']" mode="nav">
                             <xsl:sort select="name" order="{$sortOrder}"/>
                         </xsl:apply-templates>
                     </xsl:element>
@@ -43,11 +35,29 @@
                 <main>
                     <h1>PROJEKT 2</h1>
                     <h2>Nasze piwa</h2>
-                    <xsl:apply-templates/>
+                    <xsl:apply-templates select="document/beerList/beer[from/craft='yes']" mode="main"/>
+
                 </main>
 
                 <footer>
-                
+                    <table>
+                        <tr><h2>Zaufane opinie:</h2></tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Rating</th>
+                            <th>Comment</th>
+                        </tr>
+                        <xsl:for-each select="document/reviewList/review[@Cicerone='yes']">
+                          <xsl:sort select="rating"/>
+                          <tr>
+                            <td><xsl:value-of select="name"/></td>
+                            <td><xsl:value-of select="rating"/></td>
+                            <td><xsl:value-of select="comment"/></td>
+                          </tr>
+                        </xsl:for-each>
+                    </table>
+                    
+                    
                 </footer>
                 
 			</body>
@@ -76,15 +86,62 @@
     <!-- beer main template -->
     <xsl:template match="beer" mode="main">
         <div>
+            <h3>
+                <xsl:call-template name="id">
+                    <xsl:with-param name="beerId" select="@id"/>
+                </xsl:call-template>
+                Nazywam się 
+                <xsl:value-of select="name"/>
+            </h3>
             
+            <article>
+                <p>
+                    Mój styl to <xsl:value-of select="style"/><br></br>
+                    <xsl:call-template name="temperature"/><br></br>
+                    <xsl:call-template name="moc"/><br></br>
+
+                </p>
+                <xsl:call-template name="img">
+                    
+                </xsl:call-template>
+            </article>
         </div>
+        <br></br>
     </xsl:template>
-    <!-- choosing by id number -->
-    <xsl:template match="@id">
-        <xsl:attribute name="id">
-                <xsl:if test="starts-with(., 'b')">
-                    <xsl:value-of select="number(substring(., 2))"/>
-                </xsl:if>
-        </xsl:attribute>
-  </xsl:template>
+    <!-- sprawdzenie temperatury -->
+    <xsl:template name="temperature">
+        <xsl:choose>
+            <xsl:when test="servingTemp &lt; 8">
+                Jestem najlepsze na zimno: <xsl:value-of select="servingTemp"/> stopni
+            </xsl:when>
+            <xsl:otherwise>
+                Jestem dobre schłodzone do: <xsl:value-of select="servingTemp"/> stopni
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    <!-- sprawdzenie mocy -->
+    <xsl:template name="moc">
+        <xsl:choose>
+            <xsl:when test="abv &lt;= 1">
+                Możesz po mnie jechać autem! Mam <xsl:value-of select="format-number(abv * .01,'0.00%')"/>!
+            </xsl:when>
+            <xsl:when test="abv &lt;= 6">
+                Ze mną jest dobra zabawa, ale wołaj Ubera! Mam <xsl:value-of select="format-number(abv * .01,'0.00%')"/>!
+            </xsl:when>
+            <xsl:otherwise>
+                Nie myśl co będzie rano, a na pewno nie wychodź z domu! Mam <xsl:value-of select="format-number(abv * .01,'0.00%')"/>!
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    <!-- formatting id number -->
+    <xsl:template name="id">
+        <xsl:param name="beerId"/>
+        <xsl:if test="starts-with($beerId, 'b')">
+            <xsl:value-of select="number(substring($beerId, 2))"/>
+        </xsl:if>
+    </xsl:template>
+    <!-- picture template -->
+    <xsl:template name="img">
+    template zdjęcia
+    </xsl:template>
 </xsl:stylesheet>
