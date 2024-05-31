@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xslt"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="beer.xsd">
+    <reviewList>
+        <review Cicerone="no" date="2024-05-22">
+            <name>John Doe</name>
+            <user>no</user>
+            <email>johndoe@doe.com</email>
+            <phone>+0 123 123 932</phone>
+            <rating>9.5</rating>
+            <comment>Great beer!</comment>
+        </review>
+        <review Cicerone="no" date="2024-05-20">
+            <name>Nickname123</name>
+            <user>no</user>
+            <rating>7.2</rating>
+            <comment>Good taste but too bitter for my liking.</comment>
+        </review>
+        <review Cicerone="yes" date="2024-05-18">
+            <name>Ted Bear</name>
+            <user>yes</user>
+            <rating>8.0</rating>
+            <comment>Nice aroma and smooth finish.</comment>
+        </review>
+    </reviewList>
+
+    <beerList>
+       <beer id="b001" seasonal="true" Availability="available">
+        <name>Summer Ale</name>
+        <style>Pale Ale</style>
+        <from>
+            <brewery id="br001">
+                <name>Summer Brews Inc.</name>
+                <location>California, USA</location>
+                <yearEstablished>2010</yearEstablished>
+            </brewery>
+            <craft>yes</craft>
+        </from>
+        <servingTemp>8</servingTemp>
+        <abv>5.2</abv>
+        <flavourProfile>
+            <bitterness>6.5</bitterness>
+            <sweetness>4.2</sweetness>
+            <strength>5.8</strength>
+            <description>
+                <color>Light amber</color>
+                <carbonation>Moderate</carbonation>
+                <aftertaste>Refreshing citrus</aftertaste>
+            </description>
+        </flavourProfile>
+        <ingredients>
+            <hop>Cascade</hop>
+            <malts>Pale malt, Munich malt</malts>
+            <yeast>California Ale</yeast>
+            <water>Purified water</water>
+            <other>Orange peel, Coriander seeds</other>
+        </ingredients>
+        <link>http://summerbrews.com/summer-ale</link>
+        <photo>
+            <url>http://summerbrews.com/summer-ale-photo.jpg</url>
+            <author>John Doe</author>
+        </photo>
+        <seasonal>
+            <holidayname>Summer Solstice</holidayname>
+            <from>2024-06-21</from>
+            <to>2024-09-23</to>
+        </seasonal>
+        </beer>
+        <beer id="b002" seasonal="false" Availability="limited">
+            <name>Winter Stout</name>
+            <style>Stout</style>
+            <from>
+                <brewery id="br002">
+                    <name>Winter Brews LLC</name>
+                    <location>New York, USA</location>
+                    <yearEstablished>2005</yearEstablished>
+                </brewery>
+                <craft>yes</craft>
+            </from>
+            <servingTemp>12</servingTemp>
+            <abv>7.5</abv>
+            <flavourProfile>
+                <bitterness>7.8</bitterness>
+                <sweetness>3.5</sweetness>
+                <strength>8.2</strength>
+                <description>
+                    <color>Dark brown</color>
+                    <carbonation>Low</carbonation>
+                    <aftertaste>Roasted coffee</aftertaste>
+                </description>
+            </flavourProfile>
+            <ingredients>
+                <hop>Fuggle, Goldings</hop>
+                <malts>Roasted barley, Chocolate malt</malts>
+                <yeast>London Ale</yeast>
+                <water>Spring water</water>
+            </ingredients>
+            <link>http://winterbrews.com/winter-stout</link>
+            <photo>
+                <url>http://winterbrews.com/winter-stout-photo.jpg</url>
+                <author>Jane Smith</author>
+            </photo>
+        </beer>
+        <beer id="b003" seasonal="false" Availability="available">
+            <name>Czarownica</name>
+            <style>IPA</style>
+            <from>
+                <brewery id="br003">
+                    <name>Browar Gościszewo</name>
+                    <location>Gościszewo</location>
+                    <yearEstablished>1991</yearEstablished>
+                    <description>Rodzinny browar z Pomorza</description>
+                </brewery>
+                <craft>yes</craft>
+            </from>
+            <servingTemp>6</servingTemp>
+            <abv>7.2</abv>
+            <flavourProfile>
+                <bitterness>8</bitterness>
+                <sweetness>7.5</sweetness>
+                <strength>10</strength>
+                <description>
+                    <color>Amber</color>
+                    <carbonation>Moderate</carbonation>
+                    <aftertaste>Juicy</aftertaste>
+                </description>
+            </flavourProfile>
+            <link>https://browargosciszewo.pl/produkty/?piwo=1#produkty</link>
+            <photo>
+                <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Czarownica.png</url>
+                <author>Browar Gościszewo</author>
+            </photo>
+        </beer>
+        <beer id="b004" seasonal="false" Availability="available">
+            <name>Szewc</name>
+            <style>Pils</style>
+            <from>
+                <brewery id="br004">
+                    <name>Browar Gościszewo</name>
+                    <location>Gościszewo</location>
+                    <yearEstablished>1991</yearEstablished>
+                    <description>Rodzinny browar z Pomorza</description>
+                </brewery>
+                <craft>yes</craft>
+            </from>
+            <servingTemp>7</servingTemp>
+            <abv>4.5</abv>
+            <flavourProfile>
+                <bitterness>3.5</bitterness>
+                <sweetness>1.5</sweetness>
+                <strength>3.5</strength>
+                <description>
+                    <color>Yellow</color>
+                    <carbonation>Moderate</carbonation>
+                    <aftertaste>Hopy</aftertaste>
+                </description>
+            </flavourProfile>
+            <link>https://browargosciszewo.pl/produkty/?piwo=3#produkty</link>
+            <photo>
+                <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Szewc.png</url>
+                <author>Browar Gościszewo</author>
+            </photo>
+        </beer>
+        <beer id="b005" seasonal="false" Availability="available">
+            <name>Komtur</name>
+            <style>Porter</style>
+            <from>
+                <brewery id="br005">
+                    <name>Browar Gościszewo</name>
+                    <location>Gościszewo</location>
+                    <yearEstablished>1991</yearEstablished>
+                    <description>Rodzinny browar z Pomorza</description>
+                </brewery>
+                <craft>yes</craft>
+            </from>
+            <servingTemp>12</servingTemp>
+            <abv>6.5</abv>
+            <flavourProfile>
+                <bitterness>7.5</bitterness>
+                <sweetness>6</sweetness>
+                <strength>9</strength>
+                <description>
+                    <color>Almost black</color>
+                    <carbonation>low</carbonation>
+                    <aftertaste>Dark chocolate</aftertaste>
+                </description>
+            </flavourProfile>
+            <link>https://browargosciszewo.pl/produkty/?piwo=12#produkty</link>
+            <photo>
+                <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Komtur.png</url>
+                <author>Browar Gościszewo</author>
+            </photo>
+        </beer>
+    </beerList>
+</document>

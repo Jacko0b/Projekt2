@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="BreweryType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="location" type="xs:string"/>
+      <xs:element name="yearEstablished" type="xs:gYear"/>
+      <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID"/>
+  </xs:complexType>
+
+  <xs:complexType name="BeerType">
+    <xs:sequence>
+      <xs:element name="name">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="64"/>
+            </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="style" type="BeerStyleType"/>
+      <xs:element name="from">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="brewery" type="BreweryType"/>
+                <xs:element name="craft" type="Truefalse"/>
+            </xs:sequence>
+        </xs:complexType>
+      </xs:element>      
+      <xs:element name="servingTemp" >
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="14"/>
+            </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element name="abv" type="Percent"/>
+      <xs:element name="blg" type="Percent" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="flavourProfile" type="FlavourProfileType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ingredients" minOccurs="0" maxOccurs="1" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="hop" type="xs:string"/>
+                <xs:element name="malts" type="xs:string" />
+                <xs:element name="yeast" type="xs:string" />
+                <xs:element name="water" type="xs:string" />
+                <xs:element name="other" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+           </xs:sequence> 
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="link" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="photo" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="url" type="xs:anyURI"/>
+            <xs:element name="author" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="seasonal" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="holidayname" type="xs:string"/>
+            <xs:element name="from" type="xs:date" />
+            <xs:element name="to" type="xs:date" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID"/>
+    <xs:attribute name="seasonal">
+        <xs:simpleType>
+            <xs:restriction base="xs:boolean"/>
+        </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute ref="Availability"/>
+  </xs:complexType>
+
+  <xs:complexType name="FlavourProfileType">
+    <xs:sequence>
+      <xs:element name="bitterness" type="RatingType" />
+      <xs:element name="sweetness" type="RatingType" />
+      <xs:element name="strength" type="RatingType"/>
+      <xs:element name="description">
+        <xs:complexType>
+           <xs:sequence>
+                <xs:element name="color" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="carbonation" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="aftertaste" type="xs:string" minOccurs="0" maxOccurs="1"/>
+           </xs:sequence> 
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ReviewType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="user" type="Truefalse"/>
+      <xs:element name="email" type="EmailType" minOccurs="0"/>
+      <xs:element name="phone" type="PhoneNumberType" minOccurs="0"/>
+      <xs:element name="rating" type="RatingType"/>
+      <xs:element name="comment" type="xs:string" minOccurs="0"/>
+      
+    </xs:sequence>
+
+    <xs:attribute ref="Cicerone"/>
+    <xs:attribute name="date" type="xs:date"/>
+    
+  </xs:complexType>
+
+  <xs:complexType name="ReviewListType">
+    <xs:sequence>
+      <xs:element name="review" type="ReviewType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BeerListType">
+    <xs:sequence>
+      <xs:element name="beer" type="BeerType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="BeerStyleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IPA"/>
+      <xs:enumeration value="Stout"/>
+      <xs:enumeration value="Pale Ale"/>
+      <xs:enumeration value="Porter"/>
+      <xs:enumeration value="Sour"/>
+      <xs:enumeration value="Wheat"/>
+      <xs:enumeration value="Lager"/>
+      <xs:enumeration value="Pils"/>
+
+    </xs:restriction>
+  </xs:simpleType>
+
+  
+
+  <xs:simpleType name="RatingType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="10"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Percent">
+    <xs:restriction base="xs:decimal">
+        <xs:minInclusive value="0"/>
+        <xs:maxInclusive value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="EmailType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PhoneNumberType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\+?[0-9\s\-]{7,15}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Truefalse">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="no" />
+        <xs:enumeration value="yes" />
+      </xs:restriction>
+  </xs:simpleType>
+  
+<xs:attribute name="Cicerone">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="no" />
+            <xs:enumeration value="yes" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:attribute>
+<xs:attribute name="Availability">
+    <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="available"/>
+            <xs:enumeration value="limited"/>
+            <xs:enumeration value="out of stock"/>
+          </xs:restriction>
+    </xs:simpleType>
+</xs:attribute>
+<xs:element name="document">
+  <xs:complexType>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="reviewList" type="ReviewListType"/>
+      <xs:element name="beerList" type="BeerListType"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>
