@@ -34,7 +34,7 @@
                         <xsl:attribute name="style">
                             <xsl:value-of select="$listStyle"/>
                         </xsl:attribute>
-                        <xsl:apply-templates select="document/beerList/beer">
+                        <xsl:apply-templates select="document/beerList/beer" mode="nav">
                             <xsl:sort select="name" order="{$sortOrder}"/>
                         </xsl:apply-templates>
                     </xsl:element>
@@ -43,7 +43,7 @@
                 <main>
                     <h1>PROJEKT 2</h1>
                     <h2>Nasze piwa</h2>
-                    <xsl:apply-templates select="document/beerList/beer"/>
+                    <xsl:apply-templates/>
                 </main>
 
                 <footer>
@@ -55,7 +55,7 @@
     </xsl:template>
 
     <!-- beer nav template -->
-    <xsl:template match="beer">
+    <xsl:template match="beer" mode="nav">
         <li>
             <xsl:number value="position()"/>
             <xsl:choose>
@@ -73,16 +73,18 @@
         </li>
     </xsl:template>
 
+    <!-- beer main template -->
+    <xsl:template match="beer" mode="main">
+        <div>
+            
+        </div>
+    </xsl:template>
     <!-- choosing by id number -->
     <xsl:template match="@id">
         <xsl:attribute name="id">
-            <xsl:choose>
-                <xsl:when test="starts-with(., 'b')">
-                <xsl:value-of select="number(substring(., 2))"/>
-                </xsl:when>
-
-            </xsl:choose>
+                <xsl:if test="starts-with(., 'b')">
+                    <xsl:value-of select="number(substring(., 2))"/>
+                </xsl:if>
         </xsl:attribute>
-        <div></div>
   </xsl:template>
 </xsl:stylesheet>
