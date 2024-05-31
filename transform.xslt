@@ -27,6 +27,9 @@
                 <h1>PROJEKT 2</h1>
                 <h3>Lista naszych piw</h3>
                 <xsl:element name="ul" >
+                    <xsl:attribute name="style">
+                        <xsl:value-of select="$listStyle"/>
+                    </xsl:attribute>
                     <xsl:apply-templates select="document/beerList/beer"/>
                 </xsl:element>
 
@@ -37,18 +40,20 @@
     <!-- beer template -->
     <xsl:template match="beer">
         <li>
-            <a href="{link}" style="color:blue">
-                <xsl:value-of select="name"/>
-            </a> 
+            <xsl:choose>
+                <xsl:when test="@seasonal='true'">
+                    <a href="{link}" style="color:red">
+                        <xsl:value-of select="concat(name, ' - sezonowe do ', substring(seasonal/to, 6, 2), '/', substring(seasonal/to, 3, 2))"/>
+                    </a>
+                </xsl:when>
+                <xsl:otherwise>
+                    <a href="{link}" style="color:blue">
+                        <xsl:value-of select="name"/>
+                    </a> 
+                </xsl:otherwise>
+            </xsl:choose>
         </li>
     </xsl:template>
 
-    <!--seasonal beer template -->
-    <xsl:template match="beer[@seasonal='true']">
-        <li>
-            <a href="{link}" style="color:red">
-                <xsl:value-of select="concat(name, ' - sezonowe do ', substring(seasonal/to, 6, 2), '/', substring(seasonal/to, 3, 2))"/>
-            </a> 
-        </li>
-    </xsl:template>
+
 </xsl:stylesheet>
