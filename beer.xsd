@@ -129,13 +129,25 @@
   <xs:simpleType name="BeerStyleType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="IPA"/>
+      <xs:enumeration value="APA"/>
+      <xs:enumeration value="DIPA"/>
       <xs:enumeration value="Stout"/>
-      <xs:enumeration value="Pale Ale"/>
+      <xs:enumeration value="Wędzone"/>
+      <xs:enumeration value="Jasne Ale"/>
+      <xs:enumeration value="Ciemne Ale"/>
       <xs:enumeration value="Porter"/>
       <xs:enumeration value="Sour"/>
       <xs:enumeration value="Wheat"/>
       <xs:enumeration value="Lager"/>
       <xs:enumeration value="Pils"/>
+      <xs:enumeration value="Bock"/>
+      <xs:enumeration value="Żytnie"/>
+      <xs:enumeration value="Jasne Pełne"/>
+      <xs:enumeration value="Witbier"/>
+      <xs:enumeration value="Berliner Weisse"/>
+      <xs:enumeration value="Pszeniczne"/>
+      <xs:enumeration value="Jasne"/>
+
 
     </xs:restriction>
   </xs:simpleType>

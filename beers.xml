@@ -26,85 +26,69 @@
     </reviewList>
 
     <beerList>
-       <beer id="b001" seasonal="true" Availability="available">
-        <name>Summer Ale</name>
-        <style>Pale Ale</style>
-        <from>
-            <brewery id="br001">
-                <name>Summer Brews Inc.</name>
-                <location>California, USA</location>
-                <yearEstablished>2010</yearEstablished>
-            </brewery>
-            <craft>yes</craft>
-        </from>
-        <servingTemp>8</servingTemp>
-        <abv>5.2</abv>
-        <flavourProfile>
-            <bitterness>6.5</bitterness>
-            <sweetness>4.2</sweetness>
-            <strength>5.8</strength>
-            <description>
-                <color>Light amber</color>
-                <carbonation>Moderate</carbonation>
-                <aftertaste>Refreshing citrus</aftertaste>
-            </description>
-        </flavourProfile>
-        <ingredients>
-            <hop>Cascade</hop>
-            <malts>Pale malt, Munich malt</malts>
-            <yeast>California Ale</yeast>
-            <water>Purified water</water>
-            <other>Orange peel, Coriander seeds</other>
-        </ingredients>
-        <link>http://summerbrews.com/summer-ale</link>
-        <photo>
-            <url>http://summerbrews.com/summer-ale-photo.jpg</url>
-            <author>John Doe</author>
-        </photo>
-        <seasonal>
-            <holidayname>Summer Solstice</holidayname>
-            <from>2024-06-21</from>
-            <to>2024-09-23</to>
-        </seasonal>
-        </beer>
-        <beer id="b002" seasonal="false" Availability="limited">
-            <name>Winter Stout</name>
-            <style>Stout</style>
+        <beer id="b001" seasonal="false" Availability="available">
+            <name>Detektyw</name>
+            <style>APA</style>
             <from>
-                <brewery id="br002">
-                    <name>Winter Brews LLC</name>
-                    <location>New York, USA</location>
-                    <yearEstablished>2005</yearEstablished>
+                <brewery id="br001">
+                    <name>Browar Gościszewo</name>
+                    <location>Gościszewo</location>
+                    <yearEstablished>1991</yearEstablished>
+                    <description>Rodzinny browar z Pomorza</description>
                 </brewery>
                 <craft>yes</craft>
             </from>
-            <servingTemp>12</servingTemp>
-            <abv>7.5</abv>
+            <servingTemp>7</servingTemp>
+            <abv>1</abv>
             <flavourProfile>
-                <bitterness>7.8</bitterness>
-                <sweetness>3.5</sweetness>
-                <strength>8.2</strength>
+                <bitterness>5</bitterness>
+                <sweetness>4</sweetness>
+                <strength>0</strength>
                 <description>
-                    <color>Dark brown</color>
-                    <carbonation>Low</carbonation>
-                    <aftertaste>Roasted coffee</aftertaste>
+                    <color>Amber</color>
+                    <carbonation>Moderate</carbonation>
+                    <aftertaste>Tea-like</aftertaste>
                 </description>
             </flavourProfile>
-            <ingredients>
-                <hop>Fuggle, Goldings</hop>
-                <malts>Roasted barley, Chocolate malt</malts>
-                <yeast>London Ale</yeast>
-                <water>Spring water</water>
-            </ingredients>
-            <link>http://winterbrews.com/winter-stout</link>
+            <link>https://browargosciszewo.pl/produkty/?piwo=0#produkty</link>
             <photo>
-                <url>http://winterbrews.com/winter-stout-photo.jpg</url>
-                <author>Jane Smith</author>
+                <url>https://browargosciszewo.pl/wp-content/uploads/2021/08/p-Detektyw%E2%80%93-1.png</url>
+                <author>Browar Gościszewo</author>
+            </photo>
+        </beer>
+        <beer id="b002" seasonal="false" Availability="available">
+            <name>Darz Bór</name>
+            <style>Wędzone</style>
+            <from>
+                <brewery id="br002">
+                    <name>Browar Gościszewo</name>
+                    <location>Gościszewo</location>
+                    <yearEstablished>1991</yearEstablished>
+                    <description>Rodzinny browar z Pomorza</description>
+                </brewery>
+                <craft>yes</craft>
+            </from>
+            <servingTemp>7</servingTemp>
+            <abv>6</abv>
+            <flavourProfile>
+                <bitterness>5</bitterness>
+                <sweetness>6</sweetness>
+                <strength>9</strength>
+                <description>
+                    <color>Brown</color>
+                    <carbonation>Moderate</carbonation>
+                    <aftertaste>Smoky, Woody</aftertaste>
+                </description>
+            </flavourProfile>
+            <link>https://browargosciszewo.pl/produkty/?piwo=2#produkty</link>
+            <photo>
+                <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Darzbor.png</url>
+                <author>Browar Gościszewo</author>
             </photo>
         </beer>
         <beer id="b003" seasonal="false" Availability="available">
             <name>Czarownica</name>
-            <style>IPA</style>
+            <style>DIPA</style>
             <from>
                 <brewery id="br003">
                     <name>Browar Gościszewo</name>
@@ -183,7 +167,7 @@
                 <description>
                     <color>Almost black</color>
                     <carbonation>low</carbonation>
-                    <aftertaste>Dark chocolate</aftertaste>
+                    <aftertaste>Dark chocolatey</aftertaste>
                 </description>
             </flavourProfile>
             <link>https://browargosciszewo.pl/produkty/?piwo=12#produkty</link>
@@ -191,6 +175,106 @@
                 <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Komtur.png</url>
                 <author>Browar Gościszewo</author>
             </photo>
+        </beer>
+        <beer id="b006" seasonal="false" Availability="available">
+            <name>Rycerz</name>
+            <style>Jasne Pełne</style>
+            <from>
+                <brewery id="br006">
+                    <name>Browar Gościszewo</name>
+                    <location>Gościszewo</location>
+                    <yearEstablished>1991</yearEstablished>
+                    <description>Rodzinny browar z Pomorza</description>
+                </brewery>
+                <craft>yes</craft>
+            </from>
+            <servingTemp>7</servingTemp>
+            <abv>5.7</abv>
+            <flavourProfile>
+                <bitterness>5</bitterness>
+                <sweetness>6</sweetness>
+                <strength>7.5</strength>
+                <description>
+                    <color>Pale Straw</color>
+                    <carbonation>moderate</carbonation>
+                    <aftertaste>Hopy</aftertaste>
+                </description>
+            </flavourProfile>
+            <link>https://browargosciszewo.pl/produkty/?piwo=11#produkty</link>
+            <photo>
+                <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Rycerz.png</url>
+                <author>Browar Gościszewo</author>
+            </photo>
+        </beer>
+        <beer id="b007" seasonal="true" Availability="available">
+            <name>Gwiazdor Jasne</name>
+            <style>Jasne Ale</style>
+            <from>
+                <brewery id="br007">
+                    <name>Browar Gościszewo</name>
+                    <location>Gościszewo</location>
+                    <yearEstablished>1991</yearEstablished>
+                    <description>Rodzinny browar z Pomorza</description>
+                </brewery>
+                <craft>yes</craft>
+            </from>
+            <servingTemp>6</servingTemp>
+            <abv>6.5</abv>
+            <flavourProfile>
+                <bitterness>8</bitterness>
+                <sweetness>5</sweetness>
+                <strength>8</strength>
+                <description>
+                    <color>Copper</color>
+                    <carbonation>moderate</carbonation>
+                    <aftertaste>Pine</aftertaste>
+                </description>
+            </flavourProfile>
+            <link>https://browargosciszewo.pl/produkty/?piwo=17#produkty</link>
+            <photo>
+                <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Gwiazdor-jasne-%E2%80%93-1.png</url>
+                <author>Browar Gościszewo</author>
+            </photo>
+            <seasonal>
+                <holidayname>X-mas</holidayname>
+                <from>2024-11-01</from>
+                <to>2025-02-01</to>
+            </seasonal>
+        </beer>
+        <beer id="b008" seasonal="true" Availability="available">
+            <name>Gwiazdor Ciemne</name>
+            <style>Ciemne Ale</style>
+            <from>
+                <brewery id="br008">
+                    <name>Browar Gościszewo</name>
+                    <location>Gościszewo</location>
+                    <yearEstablished>1991</yearEstablished>
+                    <description>Rodzinny browar z Pomorza</description>
+                </brewery>
+                <craft>yes</craft>
+            </from>
+            <servingTemp>12</servingTemp>
+            <abv>6.5</abv>
+            <flavourProfile>
+                <bitterness>5</bitterness>
+                <sweetness>8</sweetness>
+                <strength>9</strength>
+                <description>
+                    <color>Brown</color>
+                    <carbonation>moderate</carbonation>
+                    <aftertaste>Cloves, Ginger</aftertaste>
+                </description>
+            </flavourProfile>
+            <link>https://browargosciszewo.pl/produkty/?piwo=18#produkty</link>
+            <photo>
+                <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Gwiazdor-%E2%80%93-2.png</url>
+                <author>Browar Gościszewo</author>
+            </photo>
+            <seasonal>
+                <holidayname>X-mas</holidayname>
+                <from>2024-11-01</from>
+                <to>2025-02-01</to>
+            </seasonal>
         </beer>
     </beerList>
 </document>
