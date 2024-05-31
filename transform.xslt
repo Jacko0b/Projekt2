@@ -5,7 +5,8 @@
     <!-- zmienne proste i zlozone-->
     <xsl:variable name="bgColor" select="'#9acd32'"/>
     <xsl:variable name="listStyle" select="'background-color:#9acd32; color:#ffffff; border:1px solid #000000; border-radius:10px;'"/>
-    
+    <xsl:variable name="counter" select="1"/>
+
     <xsl:variable name="ulStyle">
         <color>#9acd21</color>
         <fontColor>#ffffff</fontColor>
@@ -13,6 +14,9 @@
         <borderRadius>10px</borderRadius>
     </xsl:variable>
 
+    <!-- Definicja parametrów -->
+    <xsl:param name="sortOrder" select="'ascending'"/>
+    
     <!-- glowny szablon -->
     <xsl:output method="html" indent="yes"/>    
     <xsl:template match="/">
@@ -24,22 +28,36 @@
 
             </head>
 			<body bgcolor="{$bgColor}">
-                <h1>PROJEKT 2</h1>
-                <h3>Lista naszych piw</h3>
-                <xsl:element name="ul" >
-                    <xsl:attribute name="style">
-                        <xsl:value-of select="$listStyle"/>
-                    </xsl:attribute>
+                <nav>
+                    <h3>Lista naszych piw</h3>
+                    <xsl:element name="ul" >
+                        <xsl:attribute name="style">
+                            <xsl:value-of select="$listStyle"/>
+                        </xsl:attribute>
+                        <xsl:apply-templates select="document/beerList/beer">
+                            <xsl:sort select="name" order="{$sortOrder}"/>
+                        </xsl:apply-templates>
+                    </xsl:element>
+                </nav>
+                
+                <main>
+                    <h1>PROJEKT 2</h1>
+                    <h2>Nasze piwa</h2>
                     <xsl:apply-templates select="document/beerList/beer"/>
-                </xsl:element>
+                </main>
 
+                <footer>
+                
+                </footer>
+                
 			</body>
         </html>
     </xsl:template>
 
-    <!-- beer template -->
+    <!-- beer nav template -->
     <xsl:template match="beer">
         <li>
+            <xsl:number value="position()"/>
             <xsl:choose>
                 <xsl:when test="@seasonal='true'">
                     <a href="{link}" style="color:red">
@@ -55,5 +73,16 @@
         </li>
     </xsl:template>
 
+    <!-- choosing by id number -->
+    <xsl:template match="@id">
+        <xsl:attribute name="id">
+            <xsl:choose>
+                <xsl:when test="starts-with(., 'b')">
+                <xsl:value-of select="number(substring(., 2))"/>
+                </xsl:when>
 
+            </xsl:choose>
+        </xsl:attribute>
+        <div></div>
+  </xsl:template>
 </xsl:stylesheet>
