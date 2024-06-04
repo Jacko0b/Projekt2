@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="transform.xslt"?>
+<?xml-stylesheet type="text/xsl" href="transform1.xslt"?>
+<?xml-stylesheet type="text/xsl" href="transform2.xslt"?>
 <document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="beer.xsd">
     <reviewList>
@@ -31,8 +32,8 @@
             <style>APA</style>
             <from>
                 <brewery id="br001">
-                    <name>Browar Gościszewo</name>
-                    <location>Gościszewo</location>
+                    <name>Browar Gosciszewo</name>
+                    <location>Gosciszewo</location>
                     <yearEstablished>1991</yearEstablished>
                     <description>Rodzinny browar z Pomorza</description>
                 </brewery>
@@ -53,7 +54,7 @@
             <link>https://browargosciszewo.pl/produkty/?piwo=0#produkty</link>
             <photo>
                 <url>https://browargosciszewo.pl/wp-content/uploads/2021/08/p-Detektyw%E2%80%93-1.png</url>
-                <author>Browar Gościszewo</author>
+                <author>Browar Gosciszewo</author>
             </photo>
         </beer>
         <beer id="b002" seasonal="false" Availability="available">
@@ -61,8 +62,8 @@
             <style>Wędzone</style>
             <from>
                 <brewery id="br002">
-                    <name>Browar Gościszewo</name>
-                    <location>Gościszewo</location>
+                    <name>Browar Gosciszewo</name>
+                    <location>Gosciszewo</location>
                     <yearEstablished>1991</yearEstablished>
                     <description>Rodzinny browar z Pomorza</description>
                 </brewery>
@@ -83,7 +84,7 @@
             <link>https://browargosciszewo.pl/produkty/?piwo=2#produkty</link>
             <photo>
                 <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Darzbor.png</url>
-                <author>Browar Gościszewo</author>
+                <author>Browar Gosciszewo</author>
             </photo>
         </beer>
         <beer id="b003" seasonal="false" Availability="available">
@@ -91,8 +92,8 @@
             <style>DIPA</style>
             <from>
                 <brewery id="br003">
-                    <name>Browar Gościszewo</name>
-                    <location>Gościszewo</location>
+                    <name>Browar Gosciszewo</name>
+                    <location>Gosciszewo</location>
                     <yearEstablished>1991</yearEstablished>
                     <description>Rodzinny browar z Pomorza</description>
                 </brewery>
@@ -113,7 +114,7 @@
             <link>https://browargosciszewo.pl/produkty/?piwo=1#produkty</link>
             <photo>
                 <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Czarownica.png</url>
-                <author>Browar Gościszewo</author>
+                <author>Browar Gosciszewo</author>
             </photo>
         </beer>
         <beer id="b004" seasonal="false" Availability="available">
@@ -121,8 +122,8 @@
             <style>Pils</style>
             <from>
                 <brewery id="br004">
-                    <name>Browar Gościszewo</name>
-                    <location>Gościszewo</location>
+                    <name>Browar Gosciszewo</name>
+                    <location>Gosciszewo</location>
                     <yearEstablished>1991</yearEstablished>
                     <description>Rodzinny browar z Pomorza</description>
                 </brewery>
@@ -143,7 +144,7 @@
             <link>https://browargosciszewo.pl/produkty/?piwo=3#produkty</link>
             <photo>
                 <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Szewc.png</url>
-                <author>Browar Gościszewo</author>
+                <author>Browar Gosciszewo</author>
             </photo>
         </beer>
         <beer id="b005" seasonal="false" Availability="available">
@@ -151,8 +152,8 @@
             <style>Porter</style>
             <from>
                 <brewery id="br005">
-                    <name>Browar Gościszewo</name>
-                    <location>Gościszewo</location>
+                    <name>Browar Gosciszewo</name>
+                    <location>Gosciszewo</location>
                     <yearEstablished>1991</yearEstablished>
                     <description>Rodzinny browar z Pomorza</description>
                 </brewery>
@@ -173,7 +174,7 @@
             <link>https://browargosciszewo.pl/produkty/?piwo=12#produkty</link>
             <photo>
                 <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Komtur.png</url>
-                <author>Browar Gościszewo</author>
+                <author>Browar Gosciszewo</author>
             </photo>
         </beer>
         <beer id="b006" seasonal="false" Availability="available">
@@ -181,8 +182,8 @@
             <style>Jasne Pełne</style>
             <from>
                 <brewery id="br006">
-                    <name>Browar Gościszewo</name>
-                    <location>Gościszewo</location>
+                    <name>Browar Gosciszewo</name>
+                    <location>Gosciszewo</location>
                     <yearEstablished>1991</yearEstablished>
                     <description>Rodzinny browar z Pomorza</description>
                 </brewery>
@@ -203,7 +204,7 @@
             <link>https://browargosciszewo.pl/produkty/?piwo=11#produkty</link>
             <photo>
                 <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Rycerz.png</url>
-                <author>Browar Gościszewo</author>
+                <author>Browar Gosciszewo</author>
             </photo>
         </beer>
         <beer id="b007" seasonal="true" Availability="available">
@@ -211,8 +212,8 @@
             <style>Jasne Ale</style>
             <from>
                 <brewery id="br007">
-                    <name>Browar Gościszewo</name>
-                    <location>Gościszewo</location>
+                    <name>Browar Gosciszewo</name>
+                    <location>Gosciszewo</location>
                     <yearEstablished>1991</yearEstablished>
                     <description>Rodzinny browar z Pomorza</description>
                 </brewery>
@@ -233,7 +234,7 @@
             <link>https://browargosciszewo.pl/produkty/?piwo=17#produkty</link>
             <photo>
                 <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Gwiazdor-jasne-%E2%80%93-1.png</url>
-                <author>Browar Gościszewo</author>
+                <author>Browar Gosciszewo</author>
             </photo>
             <seasonal>
                 <holidayname>X-mas</holidayname>
@@ -246,8 +247,8 @@
             <style>Ciemne Ale</style>
             <from>
                 <brewery id="br008">
-                    <name>Browar Gościszewo</name>
-                    <location>Gościszewo</location>
+                    <name>Browar Gosciszewo</name>
+                    <location>Gosciszewo</location>
                     <yearEstablished>1991</yearEstablished>
                     <description>Rodzinny browar z Pomorza</description>
                 </brewery>
@@ -268,7 +269,7 @@
             <link>https://browargosciszewo.pl/produkty/?piwo=18#produkty</link>
             <photo>
                 <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Gwiazdor-%E2%80%93-2.png</url>
-                <author>Browar Gościszewo</author>
+                <author>Browar Gosciszewo</author>
             </photo>
             <seasonal>
                 <holidayname>X-mas</holidayname>
@@ -281,8 +282,8 @@
             <style>Ciemne Ale</style>
             <from>
                 <brewery id="br069">
-                    <name>Browar Gościszewo</name>
-                    <location>Gościszewo</location>
+                    <name>Browar Gosciszewo</name>
+                    <location>Gosciszewo</location>
                     <yearEstablished>1991</yearEstablished>
                     <description>Rodzinny browar z Pomorza</description>
                 </brewery>
@@ -303,7 +304,7 @@
             <link>https://browargosciszewo.pl/produkty/?piwo=18#produkty</link>
             <photo>
                 <url>https://browargosciszewo.pl/wp-content/uploads/2021/07/p-Gwiazdor-%E2%80%93-2.png</url>
-                <author>Browar Gościszewo</author>
+                <author>Browar Gosciszewo</author>
             </photo>
             <seasonal>
                 <holidayname>X-mas</holidayname>
