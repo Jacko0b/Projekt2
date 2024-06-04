@@ -32,7 +32,7 @@
       </xs:element>      
       <xs:element name="servingTemp" >
         <xs:simpleType>
-            <xs:restriction base="xs:integer">
+            <xs:restriction base="xs:float">
                 <xs:minInclusive value="0"/>
                 <xs:maxInclusive value="14"/>
             </xs:restriction>

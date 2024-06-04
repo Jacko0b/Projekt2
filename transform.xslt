@@ -17,9 +17,10 @@
 				<meta charset="UTF-8" />
 				<title>Projekt2</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
 
             </head>
-			<body bgcolor="{$bgColor}">
+			<body style="background-color: {$bgColor}">
                 <nav>
                     <h3>Lista naszych piw</h3>
                     <xsl:element name="ul" >
@@ -33,7 +34,7 @@
                 </nav>
                 
                 <main>
-                    <h1>PROJEKT 2</h1>
+                    <h1>PROJEKT 2 - Jakub Sobota</h1>
                     <h2>Nasze piwa</h2>
                     <xsl:apply-templates select="document/beerList/beer[from/craft='yes']" mode="main"/>
 
@@ -112,10 +113,10 @@
     <xsl:template name="temperature">
         <xsl:choose>
             <xsl:when test="servingTemp &lt; 8">
-                Jestem najlepsze na zimno: <xsl:value-of select="servingTemp"/> stopni
+                Jestem najlepsze na zimno: <xsl:value-of select="concat(format-number(servingTemp, '0'), '°')" />C
             </xsl:when>
             <xsl:otherwise>
-                Jestem dobre schłodzone do: <xsl:value-of select="servingTemp"/> stopni
+                Jestem dobre schłodzone do: <xsl:value-of select="concat(format-number(servingTemp, '0'), '°')"/>C
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -142,6 +143,13 @@
     </xsl:template>
     <!-- picture template -->
     <xsl:template name="img">
-    template zdjęcia
+        <img>
+            <xsl:attribute name="src">
+                <xsl:value-of select="./photo/url"/>
+            </xsl:attribute>
+            <xsl:attribute name="alt">
+                Zdjęcie piwa <xsl:value-of select="./photo/author"/>
+            </xsl:attribute>
+        </img>
     </xsl:template>
 </xsl:stylesheet>

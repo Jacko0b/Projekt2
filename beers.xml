@@ -218,7 +218,7 @@
                 </brewery>
                 <craft>yes</craft>
             </from>
-            <servingTemp>6</servingTemp>
+            <servingTemp>6.1235</servingTemp>
             <abv>6.5</abv>
             <flavourProfile>
                 <bitterness>8</bitterness>
